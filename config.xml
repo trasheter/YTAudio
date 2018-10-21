@@ -74,6 +74,7 @@
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 	
 	<gap:plugin name="cordova-plugin-network-information" source="npm"/>  <!-- For checking Internet connectivity -->
+	<gap:plugin name="cordova-plugin-media-with-fix" source="npm"/>
 
 	<!--
 	<gap:plugin name="de.appplant.cordova.plugin.background-mode" /> 
