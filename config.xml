@@ -45,10 +45,11 @@
 	 Spotlight Icon 
 	<icon src="icons/ios/40x40.png" gap:platform="ios" width="40" height="40" />
 	<icon src="icons/ios/80x80.png" gap:platform="ios" width="80" height="80" />
- 
+	-->
 	
-	  Splash Screens  
-	<gap:splash src="splash.png" />
+	  <!--Splash Screens  -->
+	<gap:splash src="www/splash.png" />
+	<!--
 	<gap:splash src="splash/ios/320x480.png" gap:platform="ios" width="320" height="480" />   Regular iPhone4  
 	<gap:splash src="splash/ios/640x960.png" gap:platform="ios" width="640" height="960" />   Retina iPhone4  
 	<gap:splash src="splash/ios/640x1136.png" gap:platform="ios" width="640" height="1136" />   iPhone5  
