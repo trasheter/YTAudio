@@ -33,13 +33,14 @@
 			
 				alert('Connection type: ' + states[networkState]);
 			}
-			
+
 			function onDeviceReady() {
 				
-			checkConnection();
 			}
 
 			function initialize() {
+				
+				checkConnection();
 				// register device ready event - called when PhoneGap is fully loaded
 				document.addEventListener("deviceready", onDeviceReady, false);
 			}
