@@ -40,6 +40,7 @@
 	<feature name="http://api.phonegap.com/1.0/network"/> <!-- Enable internet access permission -->
 	
 	<plugin name="cordova-plugin-background-mode" source="npm" />
+	<plugin name="cordova-plugin-background-audio" source="npm" />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 	
 	<gap:plugin name="cordova-plugin-network-information" source="npm"/>  <!-- For checking Internet connectivity -->
