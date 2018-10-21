@@ -86,7 +86,9 @@
 	
 	<!-- Permissions required. See online PhoneGap docs for more. -->
 	<feature name="http://api.phonegap.com/1.0/network"/> <!-- Enable internet access permission -->
- 
+  
+	<gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.7.5" /> 
+	
 	<!-- Required to access external resources, like APIs and webpages. Wildcard (*) allows access to everything. -->
 	<access origin="*"/>
 </widget>
