@@ -18,9 +18,7 @@
     </author>
 
     <!-- The platforms to build for. Only build what you want to target! -->
-    <gap:platform name="ios" />
-	<gap:platform name="android" />
-	<gap:platform name="winphone" />
+    <gap:platform name="ios" /> 
 	
 	<!-- Build preferences for each platform. Too many to list here, see online PhoneGap docs for more. -->
 	<preference name='phonegap-version' value='cli-6.5.0' /> <!-- Version of PhoneGap to use -->
@@ -46,17 +44,7 @@
 	<!-- Spotlight Icon -->
 	<icon src="icons/ios/40x40.png" gap:platform="ios" width="40" height="40" />
 	<icon src="icons/ios/80x80.png" gap:platform="ios" width="80" height="80" />
-	
-	<!-- Android -->
-	<icon src="icons/android/36x36.png" gap:platform="android" gap:density="ldpi" />
-	<icon src="icons/android/48x48.png" gap:platform="android" gap:density="mdpi" />
-	<icon src="icons/android/72x72.png" gap:platform="android" gap:density="hdpi" />
-	<icon src="icons/android/96x96.png" gap:platform="android" gap:density="xhdpi" />
-	<icon src="icons/android/144x144.png" gap:platform="android" gap:qualifier="xxhdpi" />
-
-	<!-- Windows Phone -->
-	<icon src="icons/wp/icon.png" gap:platform="winphone" />
-	<icon src="icons/wp/tileicon.png" gap:platform="winphone" gap:role="background" />
+ 
 	
 	<!-- Splash Screens -->
 	<gap:splash src="splash.png" />
@@ -72,22 +60,17 @@
 	<!-- retina iPad -->
 	<gap:splash src="splash/ios/1536x2008.png" gap:platform="ios" width="1536" height="2008" />
 	<gap:splash src="splash/ios/2048x1536.png" gap:platform="ios" width="2048" height="1536" />
+	
 
-	<!-- Android -->
-	<gap:splash src="splash/android/426x320.png" gap:platform="android" gap:qualifier="ldpi" />
-	<gap:splash src="splash/android/470x320.png" gap:platform="android" gap:qualifier="mdpi" />
-	<gap:splash src="splash/android/640x480.png" gap:platform="android" gap:qualifier="hdpi" />
-	<gap:splash src="splash/android/960x720.png" gap:platform="android" gap:qualifier="xhdpi" />
-	<gap:splash src="splash/android/960x1600.png" gap:platform="android" gap:qualifier="port-xxhdpi" />
-	<gap:splash src="splash/android/1600x960.png" gap:platform="android" gap:qualifier="land-xxhdpi" />
-
-	<!-- Windows Phone -->
-	<gap:splash src="splash/wp/splash.jpg" gap:platform="winphone" />
+	<allow-navigation href="http://*/*" />
+	<allow-intent href="https://*/*" />
 	
 	<!-- Permissions required. See online PhoneGap docs for more. -->
 	<feature name="http://api.phonegap.com/1.0/network"/> <!-- Enable internet access permission -->
 	
 	<plugin name="cordova-plugin-background-mode" source="npm" />
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+
 	<!--
 	<gap:plugin name="de.appplant.cordova.plugin.background-mode" /> 
 	<plugin name="de.appplant.cordova.plugin.background-mode" spec="0.5.0" source="pgb" /> -->
