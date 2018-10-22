@@ -1,1 +1,47 @@
 /* Main app CSS */ 
+
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    src: url("../fonts/fa-solid-900.eot");
+    src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), 
+    url("../fonts/fa-solid-900.woff2") format("woff2"), 
+    url("../fonts/fa-solid-900.woff") format("woff"), 
+    url("../fonts/fa-solid-900.ttf") format("truetype"), 
+    url("../fonts/fa-solid-900.svg#fontawesome") format("svg"); }
+  
+  .fa,
+  .fas {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900; }
+
+body{
+    background: #333;   
+    color: #ccc;
+}
+a{
+    color: #ccc;
+}
+
+.nav{
+    background-color: rgb(29, 29, 29);
+    margin-bottom: 30px;
+}
+
+.controls{
+    font-size: 40px;
+}
+
+.play-pause{
+    font-size: 80px;
+}
+
+#player{
+    position: absolute;
+    left: -9999px;
+}
+
+.forward-15, .back-15{
+    padding-top: 30px;
+}
