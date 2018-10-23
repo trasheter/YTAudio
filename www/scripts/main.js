@@ -1,3 +1,27 @@
+
+$(document).ready(function(){
+    setScreenClick();
+})
+
+
+
+function setScreenActive(screenClass){
+    $("."+screenClass).addClass("active");
+    setTimeout(function(){
+        $(".screen").removeClass("active");
+        $("."+screenClass).addClass("active");
+    },200)
+}
+
+
+function setScreenClick(){
+    $( "[data-screen]" ).on( "click", function () {
+        var screen = $(this).data("screen");
+        setScreenActive(screen)
+    } );
+}
+
+
 // PhoneGap is ready - begin using plugins here
 function checkConnection() {
     var networkState = navigator.connection.type;

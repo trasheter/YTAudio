@@ -1,33 +1,40 @@
-// 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
 var player;
 var playing = false;
 var currentTime = 0;
 var duration = 0;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '200',
-        width: '300',
-        videoId: 'bNAeLbEUkfc',
-        playerVars: {'playsinline':'1', 'theme':'light','color':'white','modestbranding':1,'rel':0},
-        events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-        }
-    });
-    updateCurrentTime();
-}
-
-
-
+ 
 $(document).ready(function(){
     playerControls();
 })
 
+function updatePlayer(selectedItem) {
+    setScreenActive("player"); 
+    if( selectedItem.id != currentItem.id ){   
+        console.log("new video")
+        if(player!=null){
+            player.stopVideo(); 
+        }
+        currentItem = selectedItem;
+        $(".player-wrap").html("<div id='player'></div>");
+        player = null;
+        playing = false;
+    }else {
+        return;
+    }
 
+    $(".player-thumb").attr("src",currentItem.thumbnailURL)
+    player = new YT.Player('player', {
+        height: '200',
+        width: '300',
+        videoId: currentItem.id,
+        playerVars: {'start':currentItem.currentTime, 'playsinline':'1', 'theme':'light','color':'white','modestbranding':1,'rel':0},
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+ 
 function playerControls(){
     $(".play-pause").on("click",function(){
         if(!playing){ 
@@ -41,7 +48,7 @@ function playerControls(){
             $(".play-pause .play").show();
             $(".play-pause .pause").hide();  
             updateCurrentTime();
-            player.stopVideo();
+            player.pauseVideo();
         }
     })
 
@@ -61,14 +68,23 @@ function playerControls(){
 
 }
 
+
+
 function updateCurrentTime(){
-    currentTime = player.getCurrentTime();
-    $(".progress-bar").attr("aria-valuenow",Math.floor(currentTime));
+    if(player!=null){
+        currentTime = player.getCurrentTime();
+        $(".progress-bar").attr("aria-valuenow",Math.floor(currentTime));
+    }
+   // console.log("currentTime: "+currentTime)
 }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-    //event.target.playVideo();
+    if(!playing){
+        $(".play-pause").trigger("click")
+    }
+    
+    updateCurrentTime();
 } 
 
 var done = false;
@@ -80,5 +96,5 @@ function onPlayerStateChange(event) {
     }
 }
 function stopVideo() {
-    player.stopVideo();
+    player.pauseVideo();
 }

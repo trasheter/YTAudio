@@ -26,7 +26,7 @@ a{
 
 .nav{
     background-color: rgb(29, 29, 29);
-    margin-bottom: 30px;
+    
 }
 
 .controls{
@@ -39,9 +39,62 @@ a{
 
 #player{
     position: absolute;
-    left: -9999px;
+    left: 0;
+    top:80px;
+    z-index: 999;
 }
 
 .forward-15, .back-15{
     padding-top: 30px;
 }
+
+.screens{
+    padding-top: 70px;
+}
+
+.library-items{
+    text-align: left;
+}
+
+
+.screens .screen{
+    width: 100%;  
+    transition: all linear 200ms;
+    background: red;
+    position: absolute;
+    top: 0;
+    min-height: 100%;
+    left:-100%;
+    padding:70px 20px 0; 
+}
+
+.screens .screen.active{ 
+    left:0%;
+}
+
+/*
+.screens {
+    padding:0;  
+    top:40px;
+    bottom:0;
+    left:0;
+    right:0; 
+}
+
+
+
+.screens .screen.player{
+    position: absolute; 
+    bottom:0;
+    left:-100%;
+    right:0;
+    bottom:0;
+    top:0; 
+}
+
+.screens .screen.active{ 
+    left:0%;
+}
+
+*/
+
