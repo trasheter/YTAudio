@@ -3,10 +3,12 @@ $(document).ready(function(){
     setScreenClick();
 })
 
+/*
 window.onerror = function(msg, url, linenumber) {
     alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
     return true;
 }
+*/
 
 function setScreenActive(screenClass){
     $("."+screenClass).addClass("active");
