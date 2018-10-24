@@ -1,4 +1,4 @@
-var library = [{
+var testLibrary = [{
         id: "bNAeLbEUkfc",
         title:"Dune - Frank Herbert - Audiobook Part 1 Paul Atreides Muad'dib Lady Jessica", 
         duration: 25325,
@@ -15,6 +15,16 @@ var library = [{
         thumbnailURL: "https://img.youtube.com/vi/6ByMa_1vB2s/0.jpg"
     }
 ];
+
+// Retrieve the object from storage
+var library = JSON.parse(localStorage.getItem('library')); 
+if(library==null){
+    // Put the object into storage
+    localStorage.setItem('library', JSON.stringify(testLibrary));
+    library = JSON.parse(localStorage.getItem('library')); 
+}
+
+console.log('library: '+ library);
 
 
 var currentItem = library[0];

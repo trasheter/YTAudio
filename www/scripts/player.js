@@ -3,6 +3,7 @@ var playing = false;
 var currentTime = 0;
 var duration = 0;
  
+
 $(document).ready(function(){
     playerControls();
 })
@@ -19,7 +20,9 @@ function updatePlayer(selectedItem) {
         player = null;
         playing = false;
     }else {
-        return;
+        if(player!=null){
+            return;
+        }
     }
 
     $(".player-thumb").attr("src",currentItem.thumbnailURL)
