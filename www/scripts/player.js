@@ -42,7 +42,7 @@ function playerControls(){
     $(".play-pause").on("click",function(){
         if(!playing){ 
             player.playVideo();
-            setTimeout(updateCurrentTime,1500);
+            setTimeout(updateCurrentTime,500);
             playing = true;
             $(".play-pause .play").hide();
             $(".play-pause .pause").show();
@@ -77,6 +77,9 @@ function updateCurrentTime(){
     if(player!=null){
         currentTime = player.getCurrentTime();
         $(".progress-bar").attr("aria-valuenow",Math.floor(currentTime));
+        $(".current-time").text(new Date(currentTime * 1000).toISOString().substr(11, 8));
+        currentItem.currentTime = currentTime;
+        saveLibrary();
     }
    // console.log("currentTime: "+currentTime)
 }

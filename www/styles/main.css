@@ -72,6 +72,12 @@ a{
     left:0%;
 }
 
+.screens .screen.active .player-wrap{
+    position: absolute;
+    left: -9999px;
+    top:0;
+}
+
 /*
 .screens {
     padding:0;  
@@ -83,14 +89,7 @@ a{
 
 
 
-.screens .screen.player{
-    position: absolute; 
-    bottom:0;
-    left:-100%;
-    right:0;
-    bottom:0;
-    top:0; 
-}
+
 
 .screens .screen.active{ 
     left:0%;

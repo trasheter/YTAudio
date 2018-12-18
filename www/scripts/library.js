@@ -1,11 +1,4 @@
-var testLibrary = [{
-        id: "bNAeLbEUkfc",
-        title:"Dune - Frank Herbert - Audiobook Part 1 Paul Atreides Muad'dib Lady Jessica", 
-        duration: 25325,
-        currentTime: 1000,
-        currentPercent: 3.95,
-        thumbnailURL: "https://img.youtube.com/vi/bNAeLbEUkfc/0.jpg"
-    },
+var testLibrary = [
     {
         id: "6ByMa_1vB2s",
         title:"Neuromancer - William Gibson (Full audiobook)", 
@@ -13,6 +6,14 @@ var testLibrary = [{
         currentTime: 7003,
         currentPercent: 0, 
         thumbnailURL: "https://img.youtube.com/vi/6ByMa_1vB2s/0.jpg"
+    },
+    {
+        id: "-IVIrf5DChs",
+        title:"Philip Pulmann His Dark Materials Series Book 2 The Subtle Knife Audiobook", 
+        duration: 31649.861,
+        currentTime: 725,
+        currentPercent: 0, 
+        thumbnailURL: "https://img.youtube.com/vi/-IVIrf5DChs/0.jpg"
     }
 ];
 
@@ -24,14 +25,11 @@ if(library==null){
     library = JSON.parse(localStorage.getItem('library')); 
 }
 
-console.log('library: '+ library);
-
 
 var currentItem = library[0];
 
 $(document).ready(function(){
-    createLibraryList();
-
+    createLibraryList(); 
     selectLibraryItem();
 })
 
@@ -53,4 +51,8 @@ function selectLibraryItem(){
         }) 
         updatePlayer(currentItem[0])
     })
+}
+
+function saveLibrary(){
+    localStorage.setItem('library', JSON.stringify(library));
 }
