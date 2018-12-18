@@ -36,6 +36,8 @@
 	<allow-intent href="https://*/*" />
 	
 	<allow-navigation href="https://*youtube.com/*"/>
+	<allow-navigation href="https://s.ytimg.com/*"/>
+	
 	
 	<!-- Permissions required. See online PhoneGap docs for more. -->
 	<feature name="http://api.phonegap.com/1.0/network"/> <!-- Enable internet access permission -->
